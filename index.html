@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Luiz Cavano</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <nav class="navegacao">
+        <ul class="menu">
+            <li><a href="#inicio" class="menu-link">Início</a></li>
+            <li><a href="#sobre" class="menu-link">Sobre</a></li>
+            <li><a href="#projetos" class="menu-link">Projetos</a></li>
+            <li><a href="#contato" class="menu-link">Contato</a></li>
+        </ul>
+    </nav>
+
+    <main id="inicio" class="cabecalho">
+        <div><img src="img/ProfileImage.jpg" alt="foto de Luiz Cavano" class="foto-perfil"></div>
+        <h1>Luiz Cavano</h1>
+        <p>Em busca do conhecimento</p>
+    </main>
+
+    <section id="sobre" class="sobre">
+        <h2 class="sobre-titulo">Sobre mim</h2>
+        <div class="sobre-caixa">
+            <p class="sobre-paragrafo">
+                Olá! Sou Luiz, gosto de aprender a programar e sou Estudante na <a href="https://fateccotia.cps.sp.gov.br/desenvolvimento-de-software-multiplataforma/">FATEC Cotia</a> -
+                Desenvolvimento de Software Multiplataforma.
+                Além de gostar muito dessa área, gosto muito de aplicativos Mobile.
+            </p>
+        </div>
+    </section>
+
+    <section id="projetos" class="projetos">
+        <h2 class="projetos-titulo">Meus Projetos</h2>
+        <div class="projetos-caixa">
+            <div class="projetos-card">
+                <img src="img/projeto1-site.png" alt="Projeto 1" class="projetos-imagem">
+                <h3 class="info-projetos">Site de Biblioteca para TCC</h3>
+                <p class="paragrafo-projetos">Site para Gerenciamento de bibliotecas em instituições de ensino</p>
+            </div>
+
+            <div class="projetos-card">
+                <img src="img/projeto1-app.jpg" alt="Projeto 1" class="projetos-imagem">
+                <h3 class="info-projetos">Aplicativo de Biblioteca para TCC</h3>
+                <p class="paragrafo-projetos">App para Gerenciamento de bibliotecas em instituições de ensino</p>
+            </div>
+
+            <div class="projetos-card">
+                <img src="img/projetos-futuros.png" alt="Projeto 3" class="projetos-imagem">
+                <h3 class="info-projetos">Projetos Futuros</h3>
+                <p class="paragrafo-projetos">Pretendo criar novos projetos no futuro</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="contato" class="contatos">
+        <h2 class="contatos-titulo">Contatos</h2>
+        <form class="formulario-contato" id="formulario" onsubmit="enviarWhats(event)">
+            <div class="grupo-form">
+                <input placeholder="Seu nome" id="nome" class="campo-form">
+            </div>
+            <div class="grupo-form">
+                <textarea class="text-form" id="mensagem" rows="5" placeholder="Digite sua Mensagem"></textarea>
+            </div>
+            <button type="submit" class="btn-enviar">Enviar</button>
+        </form>
+    </section>
+
+<script>
+function enviarWhats(event) {
+    event.preventDefault();
+
+    const nome = document.getElementById('nome').value;
+    const mensagem = document.getElementById('mensagem').value;
+    const telefone = '5511912420725'; // Coloque aqui o número correto
+
+    const texto  = `Olá! Me chamo ${nome}, ${mensagem}`;
+    const msgFormatada = encodeURIComponent(texto);
+
+    const url = `https://wa.me/${telefone}?text=${msgFormatada}`;
+    
+    window.open(url, '_blank');
+}
+</script>
+
+
+</body>
+
+</html>
