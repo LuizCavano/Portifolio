@@ -51,7 +51,7 @@
             </div>
 
             <div class="projetos-card">
-                <img src="img/projetos-futoros2.png" alt="Projeto 3" class="projetos-imagem">
+                <img id="lampada" src="img/LampApagada.png" alt="Projeto 3" class="projetos-imagem">
                 <h3 class="info-projetos">Projetos Futuros</h3>
                 <p class="paragrafo-projetos">Pretendo criar novos projetos no futuro</p>
             </div>
@@ -72,21 +72,20 @@
     </section>
 
 <script>
-function enviarWhats(event) {
-    event.preventDefault();
+    function alternarLampada() {
+        const lampada = document.getElementById('lampada');
+        if (lampada.src.includes('LampApagada.png')) {
+            lampada.src = 'img/LampAcesa.png';
+        } else {
+            lampada.src = 'img/LampApagada.png';
+        }
+    }
 
-    const nome = document.getElementById('nome').value;
-    const mensagem = document.getElementById('mensagem').value;
-    const telefone = '5511912420725'; // Coloque aqui o número correto
-
-    const texto  = `Olá! Me chamo ${nome}, ${mensagem}`;
-    const msgFormatada = encodeURIComponent(texto);
-
-    const url = `https://wa.me/${telefone}?text=${msgFormatada}`;
-    
-    window.open(url, '_blank');
-}
+    // Alterna a cada 1 segundo (1000ms)
+    setInterval(alternarLampada, 1000);
 </script>
+
+
 
 
 </body>
