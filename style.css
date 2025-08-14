@@ -197,3 +197,12 @@ body {
 .btn-enviar:hover {
     background: var(--secundaria);
 }
+
+.projetos-imagem {
+    width: 200px; /* ou o tamanho que preferir */
+    height: 200px;
+    object-fit: contain; /* mantém a proporção sem distorcer */
+}
+
+
+
