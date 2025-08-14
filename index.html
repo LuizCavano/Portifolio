@@ -60,16 +60,17 @@
 
     <section id="contato" class="contatos">
         <h2 class="contatos-titulo">Contatos</h2>
-        <form class="formulario-contato" id="formulario" onsubmit="enviarWhats(event)">
+        <form class="formulario-contato" id="formulario" action="enviar-email.php" method="POST">
             <div class="grupo-form">
-                <input placeholder="Seu nome" id="nome" class="campo-form">
+                <input name="nome" placeholder="Seu nome" id="nome" class="campo-form" required>
             </div>
             <div class="grupo-form">
-                <textarea class="text-form" id="mensagem" rows="5" placeholder="Digite sua Mensagem"></textarea>
+                <textarea name="mensagem" class="text-form" id="mensagem" rows="5" placeholder="Digite sua Mensagem" required></textarea>
             </div>
             <button type="submit" class="btn-enviar">Enviar</button>
         </form>
     </section>
+
 
 <script>
     function alternarLampada() {
